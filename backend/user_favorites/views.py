@@ -15,7 +15,7 @@ def get_all_user_favorites(request):
     serializer = User_FavoritesSerializer(user_favorites, many=True)
     return Response(serializer.data)
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def users_favorites(request):
     print(
@@ -23,7 +23,7 @@ def users_favorites(request):
     if request.method == 'POST':
         serializer = User_FavoritesSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.data)
+            serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
