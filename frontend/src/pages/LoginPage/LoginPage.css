@@ -1,3 +1,21 @@
 .error {
   color: red;
 }
+
+.container {
+  background-color: black;
+}
+
+button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.4rem 0.5rem;
+}
+
+button:hover {
+  background: white;
+  color: rgb(200, 22, 58);
+  cursor: pointer;
+}
+

@@ -15,6 +15,32 @@ const Navbar = () => {
             <b>LoDiff</b>
           </Link>
         </li>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Anime
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">All Titles</a>
+            <a class="dropdown-item" href="#">Latest Titles</a>
+            <a class="dropdown-item" href="#">Genres</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manga
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">All Titles</a>
+            <a class="dropdown-item" href="#">Latest Titles</a>
+            <a class="dropdown-item" href="#">Genres</a>
+            <a class="dropdown-item" href="#">Alpha Scans</a>
+            <a class="dropdown-item" href="#">Asura Scans</a>
+            <a class="dropdown-item" href="#">Flame Scans</a>
+            <a class="dropdown-item" href="#">Luminous Scans</a>
+            <a class="dropdown-item" href="#">Omega Scans</a>
+            <a class="dropdown-item" href="#">Realm Scans</a>
+          </div>
+        </div>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
