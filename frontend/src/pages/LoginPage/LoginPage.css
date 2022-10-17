@@ -19,3 +19,6 @@ button:hover {
   cursor: pointer;
 }
 
+.container-fluid {
+  background-color: black;
+}

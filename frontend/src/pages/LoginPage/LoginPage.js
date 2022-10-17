@@ -19,6 +19,7 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
+    <div class="container-fluid">
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
         <label style={{ textDecoration: "none", color: "white" }}>
@@ -45,6 +46,7 @@ const LoginPage = () => {
         <Link to="/register">Click to register!</Link>
         <button>Login!</button>
       </form>
+    </div>
     </div>
   );
 };
