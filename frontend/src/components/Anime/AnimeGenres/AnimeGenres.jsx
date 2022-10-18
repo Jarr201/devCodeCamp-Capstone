@@ -22,14 +22,19 @@ const AnimeGenres = (props) => {
     // };
 
     const fetchAnimesByGenre = async () => {
-        const response = await axios.get('https://gogoanime2.p.rapidapi.com/genre/' + props.genre, {
-            headers: {
-                'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
-                'X-RapidAPI-Host': 'gogoanime2.p.rapidapi.com'
-            }
-        })
-        console.log("Gogoanime Genre response: ", response.data)
-        setSearchedGenre(response.data.items)
+        try {
+            let response = await axios.get('https://gogoanime2.p.rapidapi.com/genre/' + props.genre, {
+                headers: {
+                    'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
+                    'X-RapidAPI-Host': 'gogoanime2.p.rapidapi.com'
+                }
+            })
+            console.log("Gogoanime Genre response: ", response.data)
+            setSearchedGenre(response.data.items)
+        } catch (error) {
+            console.log(error)
+        }
+
     };
 
     // const options = {
@@ -57,7 +62,6 @@ const AnimeGenres = (props) => {
                     </div>
                 )
             })}
-
         </div>
     );
 }

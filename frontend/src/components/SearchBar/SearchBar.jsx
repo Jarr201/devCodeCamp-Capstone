@@ -9,6 +9,7 @@ const SearchBar = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     function handleSubmit(event) {
+        // debugger
         event.preventDefault();
         console.log(searchTerm)
         props.submittedSearchTerm(searchTerm)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
@@ -8,6 +8,18 @@ import "./NavBar.css";
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  // const [data, setData] = useState('');
+
+  // useEffect(() => {
+  //   passedSearchTerm();
+  // });
+
+  // function passedSearchTerm(searchTerm) {
+  //   let response = searchTerm
+  //   setData(response)
+  // };
+
   return (
     <div className="navBar">
       <ul>
@@ -17,7 +29,7 @@ const Navbar = () => {
           </Link>
         </li>
         <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Anime
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -27,22 +39,22 @@ const Navbar = () => {
           </div>
         </div>
         <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manga
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">All Titles</a>
-            <a class="dropdown-item" href="#">Latest Titles</a>
-            <a class="dropdown-item" href="#">Genres</a>
-            <a class="dropdown-item" href="#">Alpha Scans</a>
-            <a class="dropdown-item" href="#">Asura Scans</a>
-            <a class="dropdown-item" href="#">Flame Scans</a>
-            <a class="dropdown-item" href="#">Luminous Scans</a>
-            <a class="dropdown-item" href="#">Omega Scans</a>
-            <a class="dropdown-item" href="#">Realm Scans</a>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">All Titles</a></li>
+            <li><a class="dropdown-item" href="#">Latest Titles</a></li>
+            <li><a class="dropdown-item" href="#">Genres</a></li>
+            <li><a class="dropdown-item" href="#">Alpha Scans</a></li>
+            <li><a class="dropdown-item" href="#">Asura Scans</a></li>
+            <li><a class="dropdown-item" href="#">Flame Scans</a></li>
+            <li><a class="dropdown-item" href="#">Luminous Scans</a></li>
+            <li><a class="dropdown-item" href="#">Omega Scans</a></li>
+            <li><a class="dropdown-item" href="#">Realm Scans</a></li>
+          </ul>
         </div>
-        <SearchBar/>
+        {/* <SearchBar submittedSearchTerm={passedSearchTerm} /> */}
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
