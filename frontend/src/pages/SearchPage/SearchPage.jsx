@@ -33,12 +33,13 @@ const SearchPage = (props) => {
     };
 
     return (
-        <div>
+        <div className='search-container'>
             {searchResult && searchResult.map((element) => {
                 return (
                     <div>
-                        <img src={element.animeimg} onClick={() => navigate(`/videopage/${element.id.videoId}`)} />
+                        <img src={element.animeImg} onClick={() => navigate(`/videopage/${element.animeUrl}`)} />
                         <h4>{element.animeTitle}</h4>
+                        <h3></h3>
                     </div>
                 )
             })}

@@ -1,0 +1,24 @@
+.search-container {
+    margin: 0;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    height: 100vh;
+}
+
+
+.search-thumbnails {
+    border-width: 2px;
+    margin-bottom: 10px;
+}
+
+.size-thumbnails {
+    background-color: black;
+    box-shadow: 5px 8px 40px #6E6E6E;
+    border-width: 6px;
+    border-radius: 0px;
+    cursor: pointer;
+    width: 480px;
+    height: 270px;
+}
