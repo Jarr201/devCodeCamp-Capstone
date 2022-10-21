@@ -24,7 +24,7 @@ const PopularAnime = (props) => {
             console.log(props.data)
             console.log(response.data)
             console.log("Gogoanime Popular Show Response: ", response.data)
-            setAnimeDetails(response.data)
+            setPopularShow(response.data)
         } catch (error) {
             console.log(error)
         }
@@ -33,6 +33,7 @@ const PopularAnime = (props) => {
     return (
         <div className='search-container'>
             <div>
+                <h4>Popular Shows</h4>
                 {popularShow && popularShow.map((element) => {
                     return (
                         <div className='Anime-searches'>

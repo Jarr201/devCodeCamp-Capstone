@@ -14,10 +14,11 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SearchBar from "./components/SearchBar/SearchBar";
+import AnimeDetails from "./components/AnimeDetails/AnimeDetails";
+import PopularAnime from "./components/Anime/PopularAnime/PopularAnime";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import AnimeDetails from "./components/AnimeDetails/AnimeDetails";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+              <PopularAnime data={data} />
             </PrivateRoute>
           }
         />
