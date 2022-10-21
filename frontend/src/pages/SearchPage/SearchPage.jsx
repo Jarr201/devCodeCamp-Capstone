@@ -32,7 +32,7 @@ const SearchPage = (props) => {
             console.log("Gogoanime Anime Search Response: ", response.data)
             setSearchResult(response.data)
 
-            let responsetwo = await axios.get(`https://manga-scrapper.p.rapidapi.com/search/${mangadata}/`,
+            let responseTwo = await axios.get(`https://manga-scrapper.p.rapidapi.com/search/${props.data}/`,
                 {
                     headers: {
                         'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
@@ -57,8 +57,6 @@ const SearchPage = (props) => {
                             <Link to={`/animedetails/${element.animeId}`}>
                                 <img src={element.animeImg} />
                             </Link>
-                            <div>
-                            </div>
                         </div>
                     )
                 })}
@@ -77,6 +75,6 @@ const SearchPage = (props) => {
                 })}
             </div>
         </div>                    
-};
+)};
 
 export default SearchPage;

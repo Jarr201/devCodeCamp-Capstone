@@ -1,0 +1,53 @@
+import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+
+const PopularAnime = (props) => {
+
+    let navigate = useNavigate();
+
+    const [popularShow, setPopularShow] = useState([])
+
+    useEffect(() => {
+        popularShows();
+    }, [props.data]);
+
+    const popularShows = async () => {
+        try {
+            let response = await axios.get('https://gogoanime2.p.rapidapi.com/popular',
+                {
+                    headers: {
+                        'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
+                        'X-RapidAPI-Host': 'gogoanime2.p.rapidapi.com'
+                    }
+                })
+            console.log(props.data)
+            console.log(response.data)
+            console.log("Gogoanime Popular Show Response: ", response.data)
+            setAnimeDetails(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    return (
+        <div className='search-container'>
+            <div>
+                {popularShow && popularShow.map((element) => {
+                    return (
+                        <div className='Anime-searches'>
+                            <h4>{element.animeTitle}</h4>
+                            <h3>{element.status}</h3>
+                            <Link to={`/animedetails/${element.animeId}`}>
+                                <img src={element.animeImg} />
+                            </Link>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    );
+}
+
+export default PopularAnime;
+
