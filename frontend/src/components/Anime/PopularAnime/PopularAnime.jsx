@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './PopularAnime.css'
 
 const PopularAnime = (props) => {
 
@@ -31,12 +32,12 @@ const PopularAnime = (props) => {
     };
 
     return (
-        <div className='search-container'>
+        <div className='search-container' class='form-grid'>
             <div>
                 <h4>Popular Shows</h4>
                 {popularShow && popularShow.map((element) => {
                     return (
-                        <div className='Anime-searches'>
+                        <div className='Anime-searches' style={{margin: "3em"}}>
                             <h4>{element.animeTitle}</h4>
                             <h3>{element.status}</h3>
                             <Link to={`/animedetails/${element.animeId}`}>

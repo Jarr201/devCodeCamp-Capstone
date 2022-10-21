@@ -47,11 +47,11 @@ const SearchPage = (props) => {
     };
 
     return (
-        <div className='search-container'>
+        <div className='search-container' style={{margin: "3em"}}>
             <div>
                 {searchResult && searchResult.map((element) => {
                     return (
-                        <div className='Anime-searches'>
+                        <div className='Anime-searches' style={{margin: "3em"}}>
                             <h4>{element.animeTitle}</h4>
                             <h3>{element.status}</h3>
                             <Link to={`/animedetails/${element.animeId}`}>
