@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './SearchPage.css'
 import SearchBar from "../../components/SearchBar/SearchBar";
 
@@ -11,9 +11,13 @@ const SearchPage = (props) => {
 
     const [searchResult, setSearchResult] = useState([])
 
+    const [searchResultTwo, setSearchResultTwo] = useState([])
+
     useEffect(() => {
         fetchSearchResult();
     }, [props.data]);
+
+    // let mangadata = props.data
 
     const fetchSearchResult = async () => {
         try {
@@ -25,8 +29,18 @@ const SearchPage = (props) => {
                 }
             })
             console.log(props.data)
-            console.log("Gogoanime Search Response: ", response.data)
-            setSearchResult(response.data.items)
+            console.log("Gogoanime Anime Search Response: ", response.data)
+            setSearchResult(response.data)
+
+            let responsetwo = await axios.get(`https://manga-scrapper.p.rapidapi.com/search/${mangadata}/`,
+                {
+                    headers: {
+                        'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
+                        'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
+                    }
+                })
+            console.log("Gogoanime Manga Search Response: ", responseTwo.data)
+            setSearchResultTwo(responseTwo.data)
         } catch (error) {
             console.log(error)
         }
@@ -34,34 +48,35 @@ const SearchPage = (props) => {
 
     return (
         <div className='search-container'>
-            {searchResult && searchResult.map((element) => {
-                return (
-                    <div>
-                        <img src={element.animeImg} onClick={() => navigate(`/videopage/${element.animeUrl}`)} />
-                        <h4>{element.animeTitle}</h4>
-                        <h3></h3>
-                    </div>
-                )
-            })}
-        </div>
-    )
+            <div>
+                {searchResult && searchResult.map((element) => {
+                    return (
+                        <div className='Anime-searches'>
+                            <h4>{element.animeTitle}</h4>
+                            <h3>{element.status}</h3>
+                            <Link to={`/animedetails/${element.animeId}`}>
+                                <img src={element.animeImg} />
+                            </Link>
+                            <div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+            <div>
+                {searchResultTwo && searchResultTwo.map((elementTwo) => {
+                    return (
+                        <div className='Manga-searches'>
+                            <h4>{elementTwo.MangaTitle}</h4>
+                            <h3>{elementTwo._type}</h3>
+                            <Link to={`/mangadetails/${elementTwo._id}`}>
+                                <img src={elementTwo.MangaCover} />
+                            </Link>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>                    
 };
 
 export default SearchPage;
-
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://gogoanime2.p.rapidapi.com/search',
-//   params: {keyw: 'naruto', page: '1'},
-//   headers: {
-//     'X-RapidAPI-Key': '468c1b551cmshb326159069e4b59p105736jsn6396a41d2ece',
-//     'X-RapidAPI-Host': 'gogoanime2.p.rapidapi.com'
-//   }
-// };
-
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });

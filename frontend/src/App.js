@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -16,6 +17,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import AnimeDetails from "./components/AnimeDetails/AnimeDetails";
+
 
 function App() {
 
@@ -46,6 +49,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/searchpage" element={<SearchPage data={data} />}/>
+        <Route path="/animedetails/:title/" element={<AnimeDetails data={data} />}/>
+        <Route path="/videopage/:title-episode-1/" element={<VideoPage data={data} />} />
       </Routes>
       <Footer />
     </div>
