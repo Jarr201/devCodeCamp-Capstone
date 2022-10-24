@@ -48,7 +48,7 @@ const MangaDetails = (props) => {
     };
 
     return (
-        <div>
+        <div style={{ margin: "4em", textDecoration: "none", color: "white" }}>
             <Link to={`/chapterpage/${title}-chapter-1`}>
                 <h4>{mangaDetails.MangaTitle}</h4>
                 <h3>{mangaDetails.otherNames}</h3>

@@ -18,6 +18,11 @@ import AnimeDetails from "./components/AnimeDetails/AnimeDetails";
 import PopularAnime from "./components/Anime/PopularAnime/PopularAnime";
 import LatestMangaTitles from "./components/Manga/LatestMangaTitles/LatestMangaTitles";
 import MangaDetails from "./components/Manga/MangaDetails/MangaDetails";
+import AlphaScans from "./components/Manga/AlphaScans/AlphaScans";
+import AsuraScans from "./components/Manga/AsuraScans/AsuraScans";
+import FlameScans from "./components/Manga/FlameScans/FlameScans";
+import LuminousScans from "./components/Manga/LuminousScans/LuminousScans";
+import RealmScans from "./components/Manga/RealmScans/RealmScans";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -58,6 +63,11 @@ function App() {
         <Route path="/videopage/:title-episode-1/" element={<VideoPage data={data} />} />
         <Route path="/mangadetails/:title" element={<MangaDetails data={data} />} />
         <Route path="/chapterpage/:title-chapter-1/" element={<ChapterPage data={data} />} />
+        <Route path="/alphascans" element={<AlphaScans data={data} />} />
+        <Route path="/asurascans" element={<AsuraScans data={data} />} />
+        <Route path="/flamescans" element={<FlameScans data={data} />} />
+        <Route path="/luminousscans" element={<LuminousScans data={data} />} />
+        <Route path="/realmscans" element={<RealmScans data={data} />} />
       </Routes>
       <Footer />
     </div>

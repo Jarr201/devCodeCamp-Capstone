@@ -34,10 +34,10 @@ const PopularAnime = (props) => {
     return (
         <div className='search-container' class='form-grid'>
             <div>
-                <h4>Popular Shows</h4>
+                <h4 style={{ margin: "4em", textDecoration: "none", color: "white" }}>Popular Shows</h4>
                 {popularShow && popularShow.map((element) => {
                     return (
-                        <div className='Anime-searches' style={{ margin: "3em" }}>
+                        <div className='Anime-searches' style={{ margin: "4em", textDecoration: "none", color: "white" }}>
                             <Link to={`/animedetails/${element.animeId}`}>
                                 <h4>{element.animeTitle}</h4>
                                 <h3>{element.status}</h3>

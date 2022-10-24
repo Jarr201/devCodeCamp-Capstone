@@ -1,3 +1,7 @@
 .form-grid {
     display: grid;
 }
+
+.search-container {
+    justify-content: center;
+}

@@ -31,27 +31,36 @@ const Navbar = () => {
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Anime
-          </button>
+            <span class="caret"></span></button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">All Titles</a>
+            {/* <a class="dropdown-item" href="#">All Titles</a> */}
             <a class="dropdown-item" href="#">Latest Titles</a>
-            <a class="dropdown-item" href="#">Genres</a>
+            {/* <a class="dropdown-item" href="#">Genres</a> */}
           </div>
         </div>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manga
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">All Titles</a></li>
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            {/* <li><a class="dropdown-item" href="#">All Titles</a></li>
             <li><a class="dropdown-item" href="#">Latest Titles</a></li>
-            <li><a class="dropdown-item" href="#">Genres</a></li>
-            <li><a class="dropdown-item" href="#">Alpha Scans</a></li>
-            <li><a class="dropdown-item" href="#">Asura Scans</a></li>
-            <li><a class="dropdown-item" href="#">Flame Scans</a></li>
-            <li><a class="dropdown-item" href="#">Luminous Scans</a></li>
-            <li><a class="dropdown-item" href="#">Omega Scans</a></li>
-            <li><a class="dropdown-item" href="#">Realm Scans</a></li>
+            <li><a   class="dropdown-item" href="#">Genres</a></li> */}
+            <Link to="/alphascans">
+              <li><a class="dropdown-item" href="#" >Alpha Scans</a></li>
+            </Link>
+            <Link to="/asurascans">
+              <li><a class="dropdown-item" href="#">Asura Scans</a></li>
+            </Link>
+            <Link to="/flamescans">
+              <li><a class="dropdown-item" href="#">Flame Scans</a></li>
+            </Link>
+            <Link to="/luminousscans">
+              <li><a class="dropdown-item" href="#">Luminous Scans</a></li>
+            </Link>
+            <Link to="/realmscans">
+              <li><a class="dropdown-item" href="#">Realm Scans</a></li>
+            </Link>
           </ul>
         </div>
         {/* <SearchBar submittedSearchTerm={passedSearchTerm} /> */}
