@@ -16,10 +16,12 @@ import Footer from "./components/Footer/Footer";
 import SearchBar from "./components/SearchBar/SearchBar";
 import AnimeDetails from "./components/AnimeDetails/AnimeDetails";
 import PopularAnime from "./components/Anime/PopularAnime/PopularAnime";
+import LatestMangaTitles from "./components/Manga/LatestMangaTitles/LatestMangaTitles";
+import MangaDetails from "./components/Manga/MangaDetails/MangaDetails";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-
+import ChapterPage from "./components/Manga/ChapterPage/ChapterPage";
 
 function App() {
 
@@ -45,6 +47,7 @@ function App() {
             <PrivateRoute>
               <HomePage />
               <PopularAnime data={data} />
+              <LatestMangaTitles data={data} />
             </PrivateRoute>
           }
         />
@@ -53,6 +56,8 @@ function App() {
         <Route path="/searchpage" element={<SearchPage data={data} />}/>
         <Route path="/animedetails/:title/" element={<AnimeDetails data={data} />}/>
         <Route path="/videopage/:title-episode-1/" element={<VideoPage data={data} />} />
+        <Route path="/mangadetails/:title" element={<MangaDetails data={data} />} />
+        <Route path="/chapterpage/:title-chapter-1/" element={<ChapterPage data={data} />} />
       </Routes>
       <Footer />
     </div>

@@ -37,10 +37,10 @@ const PopularAnime = (props) => {
                 <h4>Popular Shows</h4>
                 {popularShow && popularShow.map((element) => {
                     return (
-                        <div className='Anime-searches' style={{margin: "3em"}}>
-                            <h4>{element.animeTitle}</h4>
-                            <h3>{element.status}</h3>
+                        <div className='Anime-searches' style={{ margin: "3em" }}>
                             <Link to={`/animedetails/${element.animeId}`}>
+                                <h4>{element.animeTitle}</h4>
+                                <h3>{element.status}</h3>
                                 <img src={element.animeImg} />
                             </Link>
                         </div>
@@ -52,4 +52,3 @@ const PopularAnime = (props) => {
 }
 
 export default PopularAnime;
-

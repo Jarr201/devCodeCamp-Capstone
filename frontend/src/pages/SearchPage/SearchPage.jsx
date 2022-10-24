@@ -39,42 +39,45 @@ const SearchPage = (props) => {
                         'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
                     }
                 })
-            console.log("Gogoanime Manga Search Response: ", responseTwo.data)
-            setSearchResultTwo(responseTwo.data)
+            console.log("MangaScrapper Manga Search Response: ", responseTwo.data)
+            setSearchResultTwo(responseTwo.data.data.result)
         } catch (error) {
             console.log(error)
         }
     };
 
     return (
-        <div className='search-container' style={{margin: "3em"}}>
-            <div>
-                {searchResult && searchResult.map((element) => {
-                    return (
-                        <div className='Anime-searches' style={{margin: "3em"}}>
-                            <h4>{element.animeTitle}</h4>
-                            <h3>{element.status}</h3>
-                            <Link to={`/animedetails/${element.animeId}`}>
-                                <img src={element.animeImg} />
-                            </Link>
-                        </div>
-                    )
-                })}
+        <div className='container-fluid' style={{ margin: "3em" }}>
+            <div class="row">
+                <div class="col-md-6"> Anime
+                    {searchResult && searchResult.map((element) => {
+                        return (
+                            <div className='Anime-searches' style={{ margin: "3em" }}>
+                                <Link to={`/animedetails/${element.animeId}`}>
+                                    <h4>{element.animeTitle}</h4>
+                                    <h3>{element.status}</h3>
+                                    <img src={element.animeImg} />
+                                </Link>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-            <div>
+            <div class="col-md-6"> Webtoons
                 {searchResultTwo && searchResultTwo.map((elementTwo) => {
                     return (
                         <div className='Manga-searches'>
-                            <h4>{elementTwo.MangaTitle}</h4>
-                            <h3>{elementTwo._type}</h3>
                             <Link to={`/mangadetails/${elementTwo._id}`}>
+                                <h4>{elementTwo.MangaTitle}</h4>
+                                <h3>{elementTwo._type}</h3>
                                 <img src={elementTwo.MangaCover} />
                             </Link>
                         </div>
                     )
                 })}
             </div>
-        </div>                    
-)};
+        </div>
+    )
+};
 
 export default SearchPage;

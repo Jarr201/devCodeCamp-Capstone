@@ -27,7 +27,7 @@ const AnimeDetails = (props) => {
                     }
                 })
             console.log(props.data)
-            console.log(response.data)
+            // console.log(response.data)
             console.log("Gogoanime Details Response: ", response.data)
             // debugger
             setAnimeDetails(response.data)
@@ -38,19 +38,19 @@ const AnimeDetails = (props) => {
 
     return (
         <div>
-                    <h4>{animeDetails.animeTitle}</h4>
-                    <Link to={`/videopage/${title}-episode-1`}>
-                        <img src={animeDetails.animeImg} />
-                    </Link>
-                    <h4>{animeDetails.type}</h4>
-                    <h4>{animeDetails.releasedDate}</h4>
-                    <h4>{animeDetails.status}</h4>
-                    {/* <h4>{animeDetails.genres}</h4> */}
-                    <h4>{animeDetails.otherNames}</h4>
-                    <h4>{animeDetails.synopsis}</h4>
-                    <h4>{animeDetails.totalEpisodes}</h4>
-                    {/* <h4>{animeDetails.episodesList}</h4> */}
-                </div>
+            <h4>{animeDetails.animeTitle}</h4>
+            <Link to={`/videopage/${title}-episode-1`}>
+                <img src={animeDetails.animeImg} />
+            </Link>
+            <h4>{animeDetails.type}</h4>
+            <h4>{animeDetails.releasedDate}</h4>
+            <h4>{animeDetails.status}</h4>
+            {/* <h4>{animeDetails.genres}</h4> */}
+            <h4>{animeDetails.otherNames}</h4>
+            <h4>{animeDetails.synopsis}</h4>
+            <h4>{animeDetails.totalEpisodes}</h4>
+            {/* <h4>{animeDetails.episodesList}</h4> */}
+        </div>
     )
 };
 
