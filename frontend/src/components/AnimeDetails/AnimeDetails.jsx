@@ -37,7 +37,7 @@ const AnimeDetails = (props) => {
     };
 
     return (
-        <div>
+        <div style={{ margin: "4em", textDecoration: "none", color: "white" }}>
             <h4>{animeDetails.animeTitle}</h4>
             <Link to={`/videopage/${title}-episode-1`}>
                 <img src={animeDetails.animeImg} />
@@ -48,7 +48,7 @@ const AnimeDetails = (props) => {
             {/* <h4>{animeDetails.genres}</h4> */}
             <h4>{animeDetails.otherNames}</h4>
             <h4>{animeDetails.synopsis}</h4>
-            <h4>{animeDetails.totalEpisodes}</h4>
+            {/* <h4>{animeDetails.totalEpisodes}</h4> */}
             {/* <h4>{animeDetails.episodesList}</h4> */}
         </div>
     )

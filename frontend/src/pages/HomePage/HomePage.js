@@ -29,12 +29,12 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1 style={{ textDecoration: "none", color: "white" }}>Home Page for {user.username}!</h1>
-      {cars &&
+      {/* {cars &&
         cars.map((car) => (
           <p key={car.id}>
             {car.year} {car.model} {car.make}
           </p>
-        ))}
+        ))} */}
     </div>
   );
 };

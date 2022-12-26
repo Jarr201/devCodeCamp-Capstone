@@ -46,9 +46,9 @@ const Navbar = () => {
             {/* <li><a class="dropdown-item" href="#">All Titles</a></li>
             <li><a class="dropdown-item" href="#">Latest Titles</a></li>
             <li><a   class="dropdown-item" href="#">Genres</a></li> */}
-            <Link to="/alphascans">
+            {/* <Link to="/alphascans">
               <li><a class="dropdown-item" href="#" >Alpha Scans</a></li>
-            </Link>
+            </Link> */}
             <Link to="/asurascans">
               <li><a class="dropdown-item" href="#">Asura Scans</a></li>
             </Link>

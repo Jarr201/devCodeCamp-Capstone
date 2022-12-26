@@ -49,7 +49,7 @@ const SearchPage = (props) => {
     return (
         <div className='container-fluid' style={{ margin: "3em" }}>
             <div class="row">
-                <div class="col-md-6"> Anime
+                <div class="col-md-6" style={{ margin: "4em", textDecoration: "none", color: "white" }}> Anime
                     {searchResult && searchResult.map((element) => {
                         return (
                             <div className='Anime-searches' style={{ margin: "3em" }}>
@@ -63,7 +63,7 @@ const SearchPage = (props) => {
                     })}
                 </div>
             </div>
-            <div class="col-md-6"> Webtoons
+            <div class="col-md-6" style={{ margin: "4em", textDecoration: "none", color: "white" }}> Webtoons
                 {searchResultTwo && searchResultTwo.map((elementTwo) => {
                     return (
                         <div className='Manga-searches'>
